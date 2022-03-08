@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<h1>Exercice 13</h1>
+<p>Calculer la moyenne générale d'un élève dont les notes sont renseignées dans un tableau (pas de coefficient). Elle devra être affichée avec 2 décimales.</p>
+
+<h2>Résultat</h2>
+
+<script>
+    let notes = [];
+
+    for (i=1; i <=10 ; i++) { 
+        notes.push(Math.floor(Math.random()*20))
+    }
+    
+    console.log("Les notes obtenues par l'élève sont : "+notes.join(" "))
+    
+    function Moyenne(tableauNotes) {
+        let somme = tableauNotes.reduce((a, b) => a + b , 0)
+        return ((somme)/tableauNotes.length).toFixed(2)
+    }
+
+    function Moyenne2(...tableauNotes){
+        let somme = tableauNotes.reduce((a, b) => a + b , 0)
+        return ((somme)/tableauNotes.length).toFixed(2)
+    }
+    console.log("Sa moyenne générale est donc de : "+Moyenne(notes))
+    console.log("Sa moyenne générale est donc de : "+Moyenne2(11,4,5,18,16))
+</script>
+

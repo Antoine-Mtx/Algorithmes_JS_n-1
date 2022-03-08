@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercice 4</h1>
+    <p>Ecrire un algorithme permettant de savoir si une phrase est palindrome.</p>
+
+    <h2>Résultat</h2>
+
+    <script>
+        let texte = "Engage le jeu que je le gagne";
+        let texte_minuscule = texte.toLowerCase()
+        console.log(texte_minuscule)
+        let texte_sans_parentheses_ni_minuscules = texte_minuscule.replace(/\s/g,"")
+        console.log(texte_sans_parentheses_ni_minuscules)
+
+        let tab = texte_sans_parentheses_ni_minuscules.split('')
+
+        console.log(tab)
+
+        if (tab.join('') == tab.reverse().join(''))
+            console.log("La phrase « "+texte+" » est un palindrome.")
+        else
+        console.log("La phrase « "+texte+" » n'est pas un palindrome.")
+    </script>
+    
+</body>
+</html>
+

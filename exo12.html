@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<h1>Exercice 12</h1>
+<p>A partir d’une fonction personnalisée et à partir d’un tableau de prénoms et de langue associée (tableau  contenant  clé  et  valeur),  dire  bonjour  aux  différentes  personnes  dans  leur  langue respective (français ➔«Salut», anglais ➔«Hello», espagnol ➔«Hola»)</p>
+
+<h2>Résultat</h2>
+
+<script>
+
+    let langages = [["FRA","Bonjour"],["ESP","Hola"]]
+
+    // ,["ENG","Hello"]
+
+    // let formateurs = [
+    //     ["Mickaël","FRA"],
+    //     ["Virgile","ESP"],
+    //     ["Marie-Claire","ENG"]
+    // ]
+
+    // formateurs.forEach(element => {
+    //     let prenom=element[0]
+    //     let langue=element[1]
+
+    //     if (langue == "FRA")
+    //         console.log("Bonjour "+prenom)
+    //     else if (langue == "ESP")
+    //         console.log("Hola "+prenom)
+    //     else
+    //         console.log("Hello "+prenom)
+    // })
+    
+    console.log("Variante avec objet :")
+    
+const Mickael =
+    {
+        prenom:"Mickael",
+        langue:"Français"
+    }
+
+const Matthieu =
+    {
+        prenom:"Matthieu",
+        langue:"Français"
+    }
+
+const Bob =
+    {
+        prenom:"Bob",
+        langue:"Français"
+    }
+
+const Virgile = 
+    {
+        prenom:"Virgile",
+        langue:"Espagnol"
+    }
+
+    let formateurs_obj = {
+            FRA:
+                {
+                    langue: "Français",
+                    personnes: [Mickael,Matthieu,Bob]
+                },
+            ESP:
+                {
+                    langue: "Espagnol",
+                    personnes: [Virgile]
+                }
+    }    
+
+    for (couple of langages) {
+        let salut = couple[1]
+        console.log(formateurs_obj[couple[0]].personnes)
+        for (let personne of formateurs_obj[couple[0]].personnes) {
+            console.log(salut+" "+personne.prenom)
+        }
+    }
+
+    // formateurs.sort()
+
+    // let bonjours = {
+    //     FRA: "Bonjour",
+    //     ITA: "Buongiorno",
+    //     ENG: "Hello",
+    // }
+
+    // let personnes = {
+    //     ITA: "Virgile",
+    //     FRA: "Mickael",
+    //     ENG: "Marie-Claire",
+    // }
+
+    // for (const codelang of ["ITA", "FRA", "ENG", "ESP"]) {
+    //     console.log(bonjours[codelang] + " " + personnes[codelang])
+    // }
+    
+</script>

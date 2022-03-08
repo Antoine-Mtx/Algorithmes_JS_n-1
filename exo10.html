@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<h1>Exercice 10</h1>
+<p>A partir d’un montant à payer et d’une somme versée pour régler un achat, écrire l’algorithme qui affiche à un utilisateur un rendu de monnaie en nombre de billets de 10 € et 5 €, de pièces de 2 € et 1€.</p>
+
+<h2>Résultat</h2>
+
+<script>
+    let montantAPayer = Math.floor(Math.random()*190)+10
+    let montantVerse = montantAPayer + Math.round(Math.random()*300)
+    let rendu = montantVerse - montantAPayer
+    
+    console.log("Montant à payer : "+montantAPayer+" €")
+    console.log("Montant versé : "+montantVerse+" €")
+    console.log("Montant à rendre : "+rendu+" €")
+    
+    console.log("************************************")
+    console.log("Rendu de monnaie :")
+    console.log(Math.floor(rendu/10)+" billet(s) de 10€ - "+Math.floor((rendu%10)/5)+" billet de 5€ - "+Math.floor((rendu%5)/2)+" pièce(s) de 2€ - "+(rendu%2)+" pièce de 1€")
+    
+    // je me suis servi pour chaque valeur usuelle de monnaie de l'arrondi à l'entier inférieur du montant à rendre auquel j'ai préalablement soustrait les rendus des monnaies de valeur supérieure (grâce au modulo) 
+
+    console.log("************************************")
+    console.log("************************************")
+
+    let systemeMonetaire = [500,200,100,50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01]
+
+    let montantAPayer2 = Math.random()*190+10
+    let montantVerse2 = montantAPayer2 + Math.random()*1000
+    let rendu2 = (montantVerse2 - montantAPayer2)
+
+    console.log("Montant à payer N°2 : "+montantAPayer2.toFixed(2)+" €")
+    console.log("Montant versé N°2: "+montantVerse2.toFixed(2)+" €")
+    console.log("Montant à rendre N°2: "+rendu2.toFixed(2)+" €")
+
+    console.log("************************************")
+    console.log("Rendu de monnaie :")
+    
+    let i=0
+    systemeMonetaire.forEach(val => {
+        let v = val
+        let u = Math.floor(rendu2/v) // u est ici le nombre de valeurs faciales "val" à rendre
+        let type = v >= 5 ? " billet" : " pièce"
+        type += u > 1 ? "s" : ""
+        
+        let detail= v < 1 ? " centime" : " euro"
+        detail += v > 1 ? "s" : (v < 1 && v*100 > 1 ? "s" : "")
+       
+        let vAffichee = v < 1 ? v*100 : v
+        
+        if (u>0)
+            console.log(u+" "+type+" de "+vAffichee+detail)  
+        
+        rendu2=(rendu2-u*v).toFixed(2)
+    });
+
+</script>
